@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">hellobutton</string>
+    <string name="message_initial_text">You clicked</string>
+    <string name="button_press">Press Me!</string>
+</resources>

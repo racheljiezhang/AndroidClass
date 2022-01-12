@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/roseRed"
+    tools:context=".MainActivity">
+
+    <TableLayout
+        android:id="@+id/table_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginVertical="20dp">
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/button00"
+                style="@style/tttButton" />
+
+            <Button
+                android:id="@+id/button01"
+                style="@style/tttButton" />
+
+            <Button
+                android:id="@+id/button02"
+                style="@style/tttButton" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/button10"
+                style="@style/tttButton" />
+
+            <Button
+                android:id="@+id/button11"
+                style="@style/tttButton" />
+
+            <Button
+                android:id="@+id/button12"
+                style="@style/tttButton" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/button20"
+                style="@style/tttButton" />
+
+            <Button
+                android:id="@+id/button21"
+                style="@style/tttButton" />
+
+            <Button
+                android:id="@+id/button22"
+                style="@style/tttButton" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/game_state_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/table_layout"
+        android:layout_centerHorizontal="true"
+        android:text="Hello World!"
+        android:textColor="@color/white"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/new_game_button"
+        style="@style/tttButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/table_layout"
+        android:layout_alignRight="@id/table_layout"
+        android:text="@string/new_game"
+        android:textSize="20sp" />
+
+</RelativeLayout>

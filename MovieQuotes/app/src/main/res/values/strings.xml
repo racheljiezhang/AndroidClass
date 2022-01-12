@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MovieQuotes</string>
+    <string name="title_home">Home</string>
+    <string name="title_quotes">Quotes</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="current_quote_label">Current Quote:</string>
+    <string name="quote_label">Enter a quote</string>
+    <string name="movie_label">Enter a movie</string>
+    <string name="current_quote_default">Current Quote</string>
+    <string name="quote_edit_text_hint">quote here</string>
+    <string name="movie_edit_text_hint">movie here</string>
+    <string name="clear">clear</string>
+    <string name="done">done</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="quote">Quote</string>
+    <string name="movie">Movie</string>
+</resources>
