@@ -1,4 +1,4 @@
-package edu.rosehulman.moviequoteslayout
+package edu.rosehulman.moviequotes.model
 import androidx.lifecycle.ViewModel
 
 import kotlin.random.Random
@@ -33,4 +33,7 @@ class MovieQuoteViewModel : ViewModel() {
     fun size() = movieQuotes.size
 
     fun getRandom() = Random.nextInt(100)
+    fun toggleCurrentQuote() {
+        movieQuotes[currentPos].isSelected = !movieQuotes[currentPos].isSelected
+    }
 }

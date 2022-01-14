@@ -4,15 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import edu.rosehulman.moviequotes.R
 import edu.rosehulman.moviequotes.databinding.FragmentQuoteEditBinding
-import edu.rosehulman.moviequoteslayout.MovieQuote
-import edu.rosehulman.moviequoteslayout.MovieQuoteViewModel
+import edu.rosehulman.moviequotes.model.MovieQuote
+import edu.rosehulman.moviequotes.model.MovieQuoteViewModel
 
 class QuoteEditFragment : Fragment() {
 
@@ -37,13 +35,14 @@ class QuoteEditFragment : Fragment() {
         binding.doneButton.setOnClickListener {
             val q = binding.quoteEditText.text.toString()
             val m = binding.movieEditText.text.toString()
-            model.movieQuote = MovieQuote(q, m)
+            model.updateCurrentQuote(q,m)
             updateView()
             // navigate to detail screen
             findNavController().navigate(R.id.navigation_quotes_detail)
         }
         binding.clearButton.setOnClickListener {
-            model.movieQuote = MovieQuote()
+            //TODO: remove quote
+            model.updateCurrentQuote("","")
             binding.quoteEditText.setText("")
             binding.movieEditText.setText("")
             updateView()
@@ -51,6 +50,6 @@ class QuoteEditFragment : Fragment() {
     }
 
     private fun updateView() {
-        binding.currentQuoteTextView.text = model.movieQuote.toString()
+        binding.currentQuoteTextView.text = model.getCurrentQuote().toString()
     }
 }

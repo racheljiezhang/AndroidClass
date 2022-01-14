@@ -15,4 +15,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="quote">Quote</string>
     <string name="movie">Movie</string>
+    <string name="title_user">User</string>
+    <string name="user_icon_description">It\'s me Mario</string>
+    <string name="name">Rachel Zhang</string>
+    <string name="your_profile">Your Profile</string>
+    <string name="age">21 years old</string>
+    <string name="logout">Logout</string>
+    <string name="edit">Edit</string>
 </resources>

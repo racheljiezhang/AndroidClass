@@ -3,19 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_quotes">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="edu.rosehulman.moviequotes.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_user"
+        android:name="edu.rosehulman.moviequotes.ui.UserFragment"
+        android:label="@string/title_user"
+        tools:layout="@layout/fragment_user" />
 
     <fragment
         android:id="@+id/navigation_quotes"
+        android:name="edu.rosehulman.moviequotes.ui.QuotesListFragment"
+        android:label="@string/title_quotes"
+        tools:layout="@layout/fragment_quotes_list" />
+
+    <fragment
+        android:id="@+id/navigation_quote_edit"
         android:name="edu.rosehulman.moviequotes.ui.QuoteEditFragment"
         android:label="@string/title_quotes"
         tools:layout="@layout/fragment_quote_edit" />
+
+    <fragment
+        android:id="@+id/navigation_quotes_detail"
+        android:name="edu.rosehulman.moviequotes.ui.QuotesDetailFragment"
+        android:label="Quotes"
+        tools:layout="@layout/fragment_quotes_detail" />
 
     <fragment
         android:id="@+id/navigation_notifications"
@@ -23,8 +35,5 @@
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 
-    <fragment
-        android:id="@+id/navigation_quotes_detail"
-        android:name="edu.rosehulman.moviequotes.ui.QuotesDetailFragment"
-        tools:layout="@layout/fragment_quotes_detail" />
+
 </navigation>

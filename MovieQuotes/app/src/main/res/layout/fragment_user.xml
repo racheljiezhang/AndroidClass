@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.UserFragment"
+    android:background="@color/teal_200">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/name"
+        android:text="@string/your_profile"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_marginTop="3dp"
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/center_image"
+        android:text="@string/name"
+        android:textSize="36sp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/center_image"
+        android:layout_width="192dp"
+        android:layout_height="192dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_baseline_person_24"
+        android:contentDescription="@string/user_icon_description" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/center_image"
+        android:text="@string/age"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/age"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/age"
+        android:text="@string/user_icon_description"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/description"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/logout"
+        android:layout_below="@id/description"
+        android:layout_marginStart="20dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit"
+        android:layout_below="@id/description"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"/>
+
+</RelativeLayout>

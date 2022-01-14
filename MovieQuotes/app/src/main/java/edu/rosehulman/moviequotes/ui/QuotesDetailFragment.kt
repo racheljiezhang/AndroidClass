@@ -7,9 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import edu.rosehulman.moviequotes.R
 import edu.rosehulman.moviequotes.databinding.FragmentQuotesDetailBinding
-import edu.rosehulman.moviequoteslayout.MovieQuoteViewModel
+import edu.rosehulman.moviequotes.model.MovieQuoteViewModel
 
 class QuotesDetailFragment : Fragment() {
     private lateinit var binding: FragmentQuotesDetailBinding
@@ -27,8 +26,8 @@ class QuotesDetailFragment : Fragment() {
     }
     fun updateView(){
         Log.d("MQ", "in detail update view")
-        binding.quoteTextView.text = model.movieQuote.quote
-        binding.movieTextView.text = model.movieQuote.movie
+        binding.quoteTextView.text = model.getCurrentQuote().quote
+        binding.movieTextView.text = model.getCurrentQuote().movie
     }
 
 }
