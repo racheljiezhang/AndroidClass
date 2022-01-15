@@ -1,4 +1,4 @@
-package edu.rosehulman.moviequotes.ui
+package edu.rosehulman.photobucket.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,33 +6,37 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import edu.rosehulman.moviequotes.R
-import edu.rosehulman.moviequotes.adapters.MovieQuoteAdapter
-import edu.rosehulman.moviequotes.databinding.FragmentQuotesListBinding
-import edu.rosehulman.moviequotes.model.MovieQuote
+import edu.rosehulman.photobucket.R
+import edu.rosehulman.photobucket.adapters.PhotoAdapter
+import edu.rosehulman.photobucket.databinding.AppBarMainBinding
+import edu.rosehulman.photobucket.databinding.ContentMainBinding
+import edu.rosehulman.photobucket.databinding.FragmentPhotosListBinding
 
 
-class QuotesListFragment : Fragment() {
 
-    lateinit var binding: FragmentQuotesListBinding
+class PhotosListFragment : Fragment() {
+
+    lateinit var binding: FragmentPhotosListBinding
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentQuotesListBinding.inflate(inflater, container, false)
-        val adapter = MovieQuoteAdapter(this)
+        binding = FragmentPhotosListBinding.inflate(inflater, container, false)
+        val adapter = PhotoAdapter(this)
         //set recyclerview and adapter properties
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.setHasFixedSize(true)
-        binding.recyclerView.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
 
+        binding.recyclerView.layoutManager = GridLayoutManager(context, 3)
         binding.fab.setOnClickListener{
-            adapter.addQuote(null)
+            adapter.addPhoto()
         }
+
         return binding.root
     }
 }

@@ -9,12 +9,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import edu.rosehulman.photobucket.R
 import edu.rosehulman.photobucket.databinding.FragmentPhotoEditBinding
-import edu.rosehulman.photobucket.model.PhotoViewModel
+import edu.rosehulman.photobucket.model.PhotosViewModel
 
 
 class PhotoEditFragment : Fragment() {
 
-    private lateinit var model: PhotoViewModel
+    private lateinit var model: PhotosViewModel
     private lateinit var binding: FragmentPhotoEditBinding
 
     override fun onCreateView(
@@ -23,7 +23,7 @@ class PhotoEditFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         model =
-            ViewModelProvider(requireActivity()).get(PhotoViewModel::class.java)
+            ViewModelProvider(requireActivity()).get(PhotosViewModel::class.java)
         binding = FragmentPhotoEditBinding.inflate(inflater, container, false)
         setupButtons()
 
@@ -37,6 +37,12 @@ class PhotoEditFragment : Fragment() {
             model.updateCurrentPhoto(c,u)
 
             findNavController().navigate(R.id.nav_detail)
+        }
+
+        binding.removeButton.setOnClickListener {
+            model.removePhoto()
+
+            findNavController().navigate(R.id.nav_list)
         }
 
     }

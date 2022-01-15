@@ -4,19 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import coil.load
-import edu.rosehulman.photobucket.databinding.FragmentPhotoDetailBinding
 import edu.rosehulman.photobucket.databinding.FragmentUserBinding
-import edu.rosehulman.photobucket.model.PhotoViewModel
+import edu.rosehulman.photobucket.model.PhotosViewModel
 
 class UserFragment : Fragment() {
 
     private lateinit var binding: FragmentUserBinding
-    private lateinit var model: PhotoViewModel
+    private lateinit var model: PhotosViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,7 +21,7 @@ class UserFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentUserBinding.inflate(inflater, container, false)
-        model = ViewModelProvider(requireActivity()).get(PhotoViewModel::class.java)
+        model = ViewModelProvider(requireActivity()).get(PhotosViewModel::class.java)
         updateView()
         return binding.root
     }

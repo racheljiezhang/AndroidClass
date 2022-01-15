@@ -3,19 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_edit">
-
-    <fragment
-        android:id="@+id/nav_photos"
-        android:name="edu.rosehulman.photobucket.ui.photos.PhotosFragment"
-        android:label="@string/menu_photos"
-        tools:layout="@layout/fragment_photos" />
+    app:startDestination="@+id/nav_list">
 
     <fragment
         android:id="@+id/nav_edit"
         android:name="edu.rosehulman.photobucket.ui.PhotoEditFragment"
         android:label="Edit"
         tools:layout="@layout/fragment_photo_edit" />
+
+    <fragment
+        android:id="@+id/nav_list"
+        android:name="edu.rosehulman.photobucket.ui.PhotosListFragment"
+        android:label="Photos"
+        tools:layout="@layout/fragment_photos_list" />
 
     <fragment
         android:id="@+id/nav_detail"
