@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Exam2Zhangrj</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="appointments_fragment_label">Appointments</string>
+    <string name="removed_items_label">Removed Items</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="delete">Delete</string>
+    <string name="undo">undo</string>
+
+</resources>

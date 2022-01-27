@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/AppointmentsFragment">
+
+    <fragment
+        android:id="@+id/AppointmentsFragment"
+        android:name="edu.rosehulman.exam2zhangrj.AppointmentsFragment"
+        android:label="@string/appointments_fragment_label"
+        tools:layout="@layout/fragment_appointments">
+
+    </fragment>
+    <fragment
+        android:id="@+id/RemovedItemsFragment"
+        android:name="edu.rosehulman.exam2zhangrj.RemovedItemsFragment"
+        android:label="@string/removed_items_label"
+        tools:layout="@layout/fragment_removed_items">
+
+    </fragment>
+
+
+</navigation>

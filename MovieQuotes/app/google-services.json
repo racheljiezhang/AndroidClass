@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "420455326575",
+    "project_id": "zhang-movie-quotes-android",
+    "storage_bucket": "zhang-movie-quotes-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420455326575:android:6e8e9b443301d336157e9a",
+        "android_client_info": {
+          "package_name": "edu.rosehulman.moviequotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420455326575-vth79e03jkjt3cnq0ts1ueubri8cneeu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOtyVGa9aupvdvyfKLSW35vbpZoDYC1AU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420455326575-vth79e03jkjt3cnq0ts1ueubri8cneeu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
