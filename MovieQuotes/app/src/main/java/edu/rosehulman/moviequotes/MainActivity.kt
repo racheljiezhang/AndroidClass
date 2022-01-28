@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -15,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import edu.rosehulman.moviequotes.databinding.ActivityMainBinding
+import edu.rosehulman.moviequotes.model.UserViewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -66,10 +68,20 @@ class MainActivity : AppCompatActivity() {
                 setupAuthUI()
             }
             else {
-                with (user) {
+                with(user) {
                     Log.d(Constants.TAG, "User: $uid, $email, $displayName, $photoUrl")
-    }
+                }
             }
+            val userModel = ViewModelProvider(this).get(UserViewModel::class.java)
+            userModel.getOrMakeUser {
+                if (userModel.hasCompletedSetup()) {
+                    //navController.navigate(R.id.navigation_quotes)
+                } else {
+                    navController.navigate(R.id.navigation_user_edit)
+                }
+            }
+
+
         }
     }
 
