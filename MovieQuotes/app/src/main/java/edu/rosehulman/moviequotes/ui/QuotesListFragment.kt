@@ -15,7 +15,8 @@ import edu.rosehulman.moviequotes.model.MovieQuote
 
 class QuotesListFragment : Fragment() {
 
-    lateinit var binding: FragmentQuotesListBinding
+    private lateinit var binding: FragmentQuotesListBinding
+    private lateinit var adapter: MovieQuoteAdapter
 
 
     override fun onCreateView(
@@ -23,9 +24,10 @@ class QuotesListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentQuotesListBinding.inflate(inflater, container, false)
-        val adapter = MovieQuoteAdapter(this)
+        adapter = MovieQuoteAdapter(this)
         //set recyclerview and adapter properties
         binding.recyclerView.adapter = adapter
+        adapter.addListener(fragmentName)
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
@@ -34,5 +36,13 @@ class QuotesListFragment : Fragment() {
             adapter.addQuote(null)
         }
         return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        adapter.removeListener(fragmentName)
+    }
+    companion object{
+        const val fragmentName = "QuotesListFragment"
     }
 }

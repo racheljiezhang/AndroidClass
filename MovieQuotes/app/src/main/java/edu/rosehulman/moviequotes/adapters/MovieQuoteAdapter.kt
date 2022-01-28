@@ -13,9 +13,19 @@ import edu.rosehulman.moviequotes.model.MovieQuote
 import edu.rosehulman.moviequotes.model.MovieQuoteViewModel
 import edu.rosehulman.moviequotes.ui.QuotesListFragment
 
-class MovieQuoteAdapter(val fragment: QuotesListFragment) : RecyclerView.Adapter<MovieQuoteAdapter.MovieQuoteViewHolder>() {
+class MovieQuoteAdapter(val fragment: QuotesListFragment) :
+    RecyclerView.Adapter<MovieQuoteAdapter.MovieQuoteViewHolder>() {
     val model = ViewModelProvider(fragment.requireActivity()).get(MovieQuoteViewModel::class.java)
 
+    fun addListener(fragmentName: String) {
+        model.addListener(fragmentName){
+            notifyDataSetChanged()
+        }
+    }
+
+    fun removeListener(fragmentName: String){
+        model.removeListener(fragmentName)
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieQuoteViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.row_quote, parent, false)
         return MovieQuoteViewHolder(view)
