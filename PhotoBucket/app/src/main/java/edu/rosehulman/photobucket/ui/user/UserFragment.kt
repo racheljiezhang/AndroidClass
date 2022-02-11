@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.load
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import edu.rosehulman.photobucket.databinding.FragmentUserBinding
 import edu.rosehulman.photobucket.model.PhotosViewModel
 
@@ -21,6 +23,9 @@ class UserFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentUserBinding.inflate(inflater, container, false)
+        binding.logoutButton.setOnClickListener {
+            Firebase.auth.signOut()
+        }
         model = ViewModelProvider(requireActivity()).get(PhotosViewModel::class.java)
         updateView()
         return binding.root

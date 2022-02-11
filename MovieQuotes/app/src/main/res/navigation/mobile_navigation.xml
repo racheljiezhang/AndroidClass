@@ -3,13 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_quotes">
+    app:startDestination="@+id/navigation_notifications">
 
     <fragment
         android:id="@+id/navigation_user"
         android:name="edu.rosehulman.moviequotes.ui.UserFragment"
         android:label="@string/title_user"
         tools:layout="@layout/fragment_user" />
+
+    <fragment
+        android:id="@+id/navigation_user_edit"
+        android:name="edu.rosehulman.moviequotes.ui.UserEditFragment"
+        android:label="@string/title_quotes"
+        tools:layout="@layout/fragment_user_edit" />
 
     <fragment
         android:id="@+id/navigation_quotes"

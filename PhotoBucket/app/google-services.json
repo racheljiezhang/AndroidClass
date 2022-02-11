@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "853488589385",
+    "project_id": "zhang-photo-bucket-android",
+    "storage_bucket": "zhang-photo-bucket-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:853488589385:android:dc3f8fe5b6a180ee247d98",
+        "android_client_info": {
+          "package_name": "edu.rosehulman.photobucket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "853488589385-8u9t8pfe9p4t5r4h425140d4oafgues8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo_QcIyfqzDaEyQFyl_Dt3OkjOR3KnqeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "853488589385-8u9t8pfe9p4t5r4h425140d4oafgues8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

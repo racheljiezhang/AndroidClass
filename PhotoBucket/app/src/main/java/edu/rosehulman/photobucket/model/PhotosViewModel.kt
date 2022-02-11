@@ -1,19 +1,74 @@
 package edu.rosehulman.photobucket.model
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.*
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import edu.rosehulman.photobucket.Constants
 import kotlin.random.Random
 
 class PhotosViewModel : ViewModel() {
     var photos = ArrayList<Photo>()
+    var myPhotos = ArrayList<Photo>()
     var currentPos = 0
 
     fun getPhotoAt(pos: Int) = photos[pos]
     fun getCurrentPhoto() = getPhotoAt(currentPos)
 
+    private lateinit var ref: CollectionReference
+
+    val subscriptions = HashMap<String, ListenerRegistration>()
+
+    fun addAllListener(fragmentName: String, observer: () -> Unit) {
+        ref = Firebase.firestore.collection(Photo.COLLECTION_PATH)
+        val subscription = ref
+            .orderBy(Photo.CREATED_KEY, Query.Direction.ASCENDING)
+            .addSnapshotListener { snapshot: QuerySnapshot?, error: FirebaseFirestoreException? ->
+                error?.let {
+                    Log.d(Constants.TAG, "Error: $error")
+                    return@addSnapshotListener
+                }
+
+                photos.clear()
+                snapshot?.documents?.forEach {
+                    photos.add(Photo.from(it))
+                }
+                observer()
+            }
+        subscriptions[fragmentName] = subscription
+    }
+
+    fun addOnlyListener(fragmentName: String, observer: () -> Unit) {
+        ref = Firebase.firestore.collection(Photo.COLLECTION_PATH)
+        val subscription = ref
+            .orderBy(Photo.CREATED_KEY, Query.Direction.ASCENDING)
+            .whereEqualTo("uid", Firebase.auth.currentUser!!.uid)
+            .addSnapshotListener { snapshot: QuerySnapshot?, error: FirebaseFirestoreException? ->
+                error?.let {
+                    Log.d(Constants.TAG, "Error: $error")
+                    return@addSnapshotListener
+                }
+
+                photos.clear()
+                snapshot?.documents?.forEach {
+                    photos.add(Photo.from(it))
+                }
+                observer()
+            }
+        subscriptions[fragmentName] = subscription
+    }
+
+    fun removeListener(fragmentName: String) {
+        subscriptions[fragmentName]?.remove()   //tells firebase to stop listening
+        subscriptions.remove(fragmentName)  //removes from map
+    }
+
     fun addPhoto() {
         val idx = Random.nextInt(urls.size)
-        val newPhoto = Photo(captions[idx], urls[idx])
-        photos.add(newPhoto)
+        val newPhoto = Photo(captions[idx], urls[idx], Firebase.auth.currentUser!!.uid)
+        ref.add(newPhoto)
     }
 
     fun useGivenOrRandom(given: String): String {
@@ -26,12 +81,13 @@ class PhotosViewModel : ViewModel() {
 
     fun updateCurrentPhoto(caption: String, URL: String){
         photos[currentPos].caption = caption
-        photos[currentPos].URL = useGivenOrRandom(URL)
+        photos[currentPos].url = useGivenOrRandom(URL)
+        ref.document(getCurrentPhoto().id).set(getCurrentPhoto())
 
     }
 
     fun removePhoto(){
-        photos.removeAt(currentPos)
+        ref.document(getCurrentPhoto().id).delete()
         currentPos = 0
     }
 

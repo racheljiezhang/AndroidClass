@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_notify_now"
+        android:icon="@drawable/ic_baseline_notifications_24"
+        android:title="Notify now" />
+    <item
+        android:id="@+id/action_notify_soon"
+        android:icon="@drawable/ic_baseline_notification_important_24"
+        android:title="Notify soon" />
+    <item
+        android:id="@+id/action_notify_scheduled"
+        android:icon="@drawable/ic_baseline_alarm_24"
+        android:title="Notify scheduled" />
+    <item
+        android:id="@+id/action_notify_recurring"
+        android:icon="@drawable/ic_baseline_alarm_24"
+        android:title="Notify recurring" />
+    <item
+        android:id="@+id/action_alarm_cancel_all"
+        android:icon="@drawable/ic_baseline_alarm_off_24"
+        android:title="Cancel all alarms" />
+
+</menu>

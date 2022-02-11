@@ -15,7 +15,7 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_below="@+id/photo"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="36dp"
         android:src="@drawable/ic_baseline_photo_24"/>
     <TextView
         android:id="@+id/caption"
@@ -23,9 +23,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/photo"
         android:layout_toRightOf="@+id/photo_icon"
-        android:text="Caption Here"
         android:textSize="14sp"
         android:textStyle="bold"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="36dp"/>
+    <TextView
+        android:id="@+id/uid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/caption"
+        android:textSize="14sp" />
 
 </RelativeLayout>

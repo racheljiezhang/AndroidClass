@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/SettingsFragment">
+
+    <fragment
+        android:id="@+id/SettingsFragment"
+        android:name="edu.rosehulman.alarmnotifier.ui.SettingsFragment"
+        android:label="@string/settings_fragment_label"
+        tools:layout="@layout/fragment_settings">
+    </fragment>
+    <fragment
+        android:id="@+id/OtherFragment"
+        android:name="edu.rosehulman.alarmnotifier.ui.OtherFragment"
+        android:label="@string/other_fragment_label"
+        tools:layout="@layout/fragment_other">
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/SettingsFragment" />
+    </fragment>
+</navigation>

@@ -64,6 +64,7 @@ class QuoteEditFragment : Fragment() {
             }
             picker.show(parentFragmentManager, "tag");
         }
+
         binding.clearButton.setOnClickListener {
             MaterialAlertDialogBuilder(requireActivity())
                 .setTitle("")

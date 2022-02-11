@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
             val userModel = ViewModelProvider(this).get(UserViewModel::class.java)
             userModel.getOrMakeUser {
                 if (userModel.hasCompletedSetup()) {
-                    //navController.navigate(R.id.navigation_quotes)
+                    navController.navigate(R.id.navigation_quotes)
                 } else {
                     navController.navigate(R.id.navigation_user_edit)
                 }

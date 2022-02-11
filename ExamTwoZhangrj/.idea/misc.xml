@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/imabi/AndroidStudioProjects/AndroidClass/ExamTwoZhangrj/app/src/main/res/layout/activity_main.xml" value="0.2773556231003039" />
+        <entry key="..\:/Users/imabi/AndroidStudioProjects/AndroidClass/ExamTwoZhangrj/app/src/main/res/layout/content_main.xml" value="0.2773556231003039" />
+        <entry key="..\:/Users/imabi/AndroidStudioProjects/AndroidClass/ExamTwoZhangrj/app/src/main/res/layout/fragment_appointments.xml" value="0.2773556231003039" />
+        <entry key="..\:/Users/imabi/AndroidStudioProjects/AndroidClass/ExamTwoZhangrj/app/src/main/res/layout/fragment_removed_items.xml" value="0.2773556231003039" />
+        <entry key="..\:/Users/imabi/AndroidStudioProjects/AndroidClass/ExamTwoZhangrj/app/src/main/res/layout/row_appointment.xml" value="0.2773556231003039" />
+        <entry key="..\:/Users/imabi/AndroidStudioProjects/AndroidClass/ExamTwoZhangrj/app/src/main/res/menu/menu_buttons.xml" value="0.5388888888888889" />
         <entry key="..\:/Users/imabi/AndroidStudioProjects/Exam2Zhangrj/app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.2518518518518518" />
         <entry key="..\:/Users/imabi/AndroidStudioProjects/Exam2Zhangrj/app/src/main/res/drawable/ic_baseline_undo_24.xml" value="0.2518518518518518" />
         <entry key="..\:/Users/imabi/AndroidStudioProjects/Exam2Zhangrj/app/src/main/res/layout/activity_main.xml" value="0.27912867274569403" />
