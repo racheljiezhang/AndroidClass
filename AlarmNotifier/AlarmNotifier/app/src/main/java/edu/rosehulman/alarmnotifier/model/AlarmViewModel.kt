@@ -78,8 +78,19 @@ class AlarmViewModel(private val app: Application) : AndroidViewModel(app) {
         )
     }
 
+
     fun setAlarmScheduled() {
         // TODO. Write this
+        val calendar = Calendar.getInstance().apply{
+            set(Calendar.HOUR_OF_DAY, alarmHour)
+            set(Calendar.MINUTE, alarmMinute)
+        }
+
+        alarmManager.set(
+            AlarmManager.RTC_WAKEUP,
+            calendar.timeInMillis,
+        makePendingIntent(AlarmType.SCHEDULED.toString().lowercase())
+        )
     }
 
     fun setAlarmRecurring() {
@@ -88,7 +99,7 @@ class AlarmViewModel(private val app: Application) : AndroidViewModel(app) {
 
     fun cancelAllAlarms() {
     // TODO Uncomment so you can cancel alarms:
-    //        alarmManager.cancel(makePendingIntent(AlarmType.RECURRING.toString().lowercase()))
+            alarmManager.cancel(makePendingIntent(AlarmType.RECURRING.toString().lowercase()))
     }
 
 }
